@@ -1,0 +1,64 @@
+body{
+    background-color: rgb(16, 16, 19);
+}
+
+#construct{
+    padding: 10%;
+    padding-left: 25%;
+    padding-right: 25%;
+    
+}
+#frame{
+    gap: 2rem;
+    border: 5px solid greenyellow ;
+    border-radius: 30px;
+    background-color: rgba(19, 18, 18, 0.89);
+    width: 60%;
+}
+
+
+
+
+.top{
+    display: flex;
+}
+
+#screen{
+    width: 90%;
+    background-color: green;
+    color: lawngreen;
+    opacity: 80%;
+    font-size: 400%;
+    text-shadow: 0 0 10px;
+    border-radius: 20px 0 0 0;
+}
+
+#enter{
+    color: greenyellow;
+    border-radius: 0 20px 0 0;
+    width: 10%;
+}
+
+#keypad{
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 25fr 25fr 25fr 25fr;
+    padding: 1rem;
+
+}
+
+.key{
+    border: 8px solid rgb(212, 218, 203) ;
+    border-radius: 20px;
+    padding: 20px;
+    color: aliceblue;
+    box-shadow: 0 0 5px;
+    text-shadow: 0 0 3px;
+    
+    
+}
+
+.zero{
+    grid-column: span 3;
+}
+
