@@ -3,17 +3,26 @@ body{
 }
 
 #construct{
-    padding: 10%;
-    padding-left: 25%;
-    padding-right: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 #frame{
-    gap: 2rem;
-    border: 5px solid greenyellow ;
+   
+    border: 5px solid greenyellow;
     border-radius: 30px;
     background-color: rgba(19, 18, 18, 0.89);
-    width: 60%;
+    width: 87%;
+    height: 94%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 2%;
+    bottom: auto;
+    left: 7%;
+    right: 28%;
+    
 }
 
 
@@ -21,6 +30,7 @@ body{
 
 .top{
     display: flex;
+    height: 41%;
 }
 
 #screen{
@@ -41,24 +51,35 @@ body{
 
 #keypad{
     display: grid;
-    gap: 3rem;
-    grid-template-columns: 25fr 25fr 25fr 25fr;
+    gap: 12%;
+    grid-template-columns: 15% 15% 15% 15%;
     padding: 1rem;
+    margin: 1%;
+    font-size: large;
+    row-gap: 10%;
+
 
 }
 
 .key{
-    border: 8px solid rgb(212, 218, 203) ;
+    border: 8px solid rgb(212, 218, 203);
     border-radius: 20px;
     padding: 20px;
     color: aliceblue;
     box-shadow: 0 0 5px;
     text-shadow: 0 0 3px;
+    width: 88%;
+    height: 33px;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
     
     
 }
 
-.zero{
+#zero{
     grid-column: span 3;
+    width: 98%;
+    
 }
 
