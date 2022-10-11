@@ -1,17 +1,39 @@
-let current = document.getElementById('current')
-let last = document.getElementById('last')
+let currentOperand = document.getElementById('current')
+let lastOperand = document.getElementById('last')
 let digit = document.getElementsByClassName('digit')
+let operators = document.getElementsByClassName('operators')
+let current = ''
+let last = ''
 let operator = ''
-let currentOperand = ''
+let enter = document.getElementById('enter')
+
+////// Should let evaluate the result
+enter.addEventListener('click',operate())
 
 function populate(){
+    ////// Prints numbers on screen and stores them as var current
     for (let number of digit){
         number.addEventListener('click',()=>{
-            current.textContent += number.textContent
+            currentOperand.textContent += number.textContent
+            current = currentOperand.textContent
             console.log(current)
             
         })
     }
+    ///// Stores current number and let's you start entering second line while storing chosen operand
+    for (let operation of operators){
+        operation.addEventListener('click',()=>{
+            operator = operation.textContent
+            console.log(operator)
+            lastOperand.textContent = currentOperand.textContent
+            last = lastOperand.textContent
+            console.log(last)
+            currentOperand.textContent=''
+           
+            
+        })
+    }
+
 }
 
 populate()
@@ -20,7 +42,7 @@ populate()
 
 
 let add = (last,current)=> {
-    return last+current
+    return last + current
 }
 let subtract = (last,current)=> {
     return last-current
