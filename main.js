@@ -1,25 +1,46 @@
-let add = (a,b)=> {
-    return a+b
+let current = document.getElementById('current')
+let last = document.getElementById('last')
+let digit = document.getElementsByClassName('digit')
+let operator = ''
+let currentOperand = ''
+
+function populate(){
+    for (let number of digit){
+        number.addEventListener('click',()=>{
+            current.textContent += number.textContent
+            console.log(current)
+            
+        })
+    }
 }
-let subtract = (a,b)=> {
-    return a-b
+
+populate()
+
+
+
+
+let add = (last,current)=> {
+    return last+current
 }
-let multiply = (a,b)=> {
-    return a*b
+let subtract = (last,current)=> {
+    return last-current
 }
-let divide = (a,b)=> {
-    return a/b
-}
-let operate = ''
-function operate(a, b , operate){
-    switch(a,b){
-        case '+': add(a,b);
+let multiply = (last,current)=> {
+    return last*current
+};
+let divide = (last,current)=> {
+    return last/current
+};
+
+function operate(last, current , operator){
+    switch(operator){
+        case '+': add(last,current);
             break;
-        case '-': subtract(a,b)
+        case '-': subtract(last,current)
             break;
-        case '*': multiply(a,b)
+        case '*': multiply(last,current)
             break;
-        case '/': divide(a,b)
+        case '/': divide(last,current)
             break;
     }
 }

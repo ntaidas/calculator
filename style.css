@@ -6,6 +6,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 400px;
     
 }
 #frame{
@@ -22,6 +23,7 @@ body{
     bottom: auto;
     left: 7%;
     right: 28%;
+
     
 }
 
@@ -33,7 +35,7 @@ body{
     height: 41%;
 }
 
-#screen{
+.screen{
     width: 90%;
     background-color: green;
     color: lawngreen;
@@ -43,7 +45,7 @@ body{
     border-radius: 20px 0 0 0;
 }
 
-#enter{
+#clear{
     color: greenyellow;
     border-radius: 0 20px 0 0;
     width: 10%;
@@ -65,7 +67,7 @@ body{
     border: 8px solid rgb(212, 218, 203);
     border-radius: 20px;
     padding: 20px;
-    color: aliceblue;
+    color: rgb(0, 235, 70);
     box-shadow: 0 0 5px;
     text-shadow: 0 0 3px;
     width: 88%;
