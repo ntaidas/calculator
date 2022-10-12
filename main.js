@@ -2,21 +2,47 @@ let currentOperand = document.getElementById('current')
 let lastOperand = document.getElementById('last')
 let digit = document.getElementsByClassName('digit')
 let operators = document.getElementsByClassName('operators')
-let current = ''
-let last = ''
+let current = currentOperand.textContent
+let last = lastOperand.textContent
 let operator = ''
 let enter = document.getElementById('enter')
+let a = 0
 
-////// Should let evaluate the result
-enter.addEventListener('click',operate())
+function operate(last,current,operator){
+
+    switch(operator){
+        case '+': 
+            lastOperand.textContent = last + current;;
+            currentOperand.textContent = ''
+            break;
+       case '-':
+        a = last - current;
+            lastOperand.textContent = a;
+            currentOperand.textContent = ''
+            break;
+        case '*':
+            a = last * current;
+            lastOperand.textContent = a;
+            currentOperand.textContent = ''
+            break;
+        case '/':
+            a = last / current;
+            lastOperand.textContent = a;
+            currentOperand.textContent = ''
+            break;
+    }
+    current = Number(currentOperand.textContent)
+    last = Number(lastOperand.textContent)
+}
 
 function populate(){
     ////// Prints numbers on screen and stores them as var current
     for (let number of digit){
         number.addEventListener('click',()=>{
             currentOperand.textContent += number.textContent
-            current = currentOperand.textContent
+            current = Number(currentOperand.textContent)
             console.log(current)
+            console.log(currentOperand)
             
         })
     }
@@ -25,10 +51,17 @@ function populate(){
         operation.addEventListener('click',()=>{
             operator = operation.textContent
             console.log(operator)
-            lastOperand.textContent = currentOperand.textContent
-            last = lastOperand.textContent
-            console.log(last)
-            currentOperand.textContent=''
+            if(last == false){
+                lastOperand.textContent = currentOperand.textContent
+                last = Number(lastOperand.textContent)
+                console.log(last)
+                currentOperand.textContent=''
+                console.log('good')
+            }
+            else{
+                operate(last,current,operator)
+            }
+            
            
             
         })
@@ -37,33 +70,4 @@ function populate(){
 }
 
 populate()
-
-
-
-
-let add = (last,current)=> {
-    return last + current
-}
-let subtract = (last,current)=> {
-    return last-current
-}
-let multiply = (last,current)=> {
-    return last*current
-};
-let divide = (last,current)=> {
-    return last/current
-};
-
-function operate(last, current , operator){
-    switch(operator){
-        case '+': add(last,current);
-            break;
-        case '-': subtract(last,current)
-            break;
-        case '*': multiply(last,current)
-            break;
-        case '/': divide(last,current)
-            break;
-    }
-}
 
