@@ -2,37 +2,34 @@ let currentOperand = document.getElementById('current')
 let lastOperand = document.getElementById('last')
 let digit = document.getElementsByClassName('digit')
 let operators = document.getElementsByClassName('operators')
-let current = currentOperand.textContent
-let last = lastOperand.textContent
+let current = Number(currentOperand.textContent)
+let last = false
 let operator = ''
 let enter = document.getElementById('enter')
-let a = 0
 
 function operate(last,current,operator){
 
     switch(operator){
         case '+': 
-            lastOperand.textContent = last + current;;
-            currentOperand.textContent = ''
+            lastOperand.textContent = last + current;
+
+            currentOperand.textContent = '';
             break;
        case '-':
-        a = last - current;
-            lastOperand.textContent = a;
-            currentOperand.textContent = ''
+            lastOperand.textContent = last - current;
+            currentOperand.textContent = '';
+
             break;
         case '*':
-            a = last * current;
-            lastOperand.textContent = a;
-            currentOperand.textContent = ''
+            lastOperand.textContent = last * current;
+            currentOperand.textContent = '';
             break;
         case '/':
-            a = last / current;
-            lastOperand.textContent = a;
-            currentOperand.textContent = ''
+            lastOperand.textContent = last / current;
+            currentOperand.textContent = '';
             break;
     }
-    current = Number(currentOperand.textContent)
-    last = Number(lastOperand.textContent)
+ 
 }
 
 function populate(){
@@ -41,6 +38,7 @@ function populate(){
         number.addEventListener('click',()=>{
             currentOperand.textContent += number.textContent
             current = Number(currentOperand.textContent)
+            last = Number(lastOperand.textContent)
             console.log(current)
             console.log(currentOperand)
             
